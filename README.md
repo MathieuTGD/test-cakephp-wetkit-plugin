@@ -21,6 +21,14 @@ at the location of your choice.
 
 When initializing the plugin within your controller you can specify the path of your WET folder.
 
-Read the Wiki for more information on how to initialize the Wet Plugin within your appController.
+Read the Wiki for more information on how to initialize the WetKit Plugin within your appController.
 
 
+## Using WetKit with Bake
+
+WetKit provides it's own custom bake templates. To use these when baking files make sure to add
+`-t WetKit` at the end of your bake commands. 
+
+```
+bin\cake bake controller Users -t WetKit
+```

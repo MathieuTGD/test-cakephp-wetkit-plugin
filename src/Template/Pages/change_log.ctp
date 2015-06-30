@@ -12,6 +12,10 @@ echo $markdown->text(
 
 # WETKIT Change Log
 
+## 2015-06-30
+
+- Added WET error page templates
+- Added documentation for the Markdown Helper
 
 ## 2015-06-25
 

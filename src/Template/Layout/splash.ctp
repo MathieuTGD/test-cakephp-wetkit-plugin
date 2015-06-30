@@ -26,7 +26,7 @@
     <!--[if lt IE 9]>
     <link href="<?= Configure::read('wetkit.wet.path') ?>/assets/favicon.ico" rel="shortcut icon" />
     <link rel="stylesheet" href="<?= Configure::read('wetkit.wet.path') ?>/css/ie8-theme.min.css" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/<?= Configure::read('wetkit.jquery-version') ?>/jquery.min.js"></script>
     <script src="<?= Configure::read('wetkit.wet.path') ?>/js/ie8-wet-boew.min.js"></script>
     <![endif]-->
     <noscript><link rel="stylesheet" href="<?= Configure::read('wetkit.wet.path') ?>/css/noscript.min.css" /></noscript>

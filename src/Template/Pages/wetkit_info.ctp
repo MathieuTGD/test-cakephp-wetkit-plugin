@@ -5,25 +5,29 @@ if (!Configure::read('debug')):
     throw new NotFoundException();
 endif;
 
+$this->isMarkdown = true;
+
 ?>
 
-<h1>Wetkit Information</h1>
+# Wetkit Information
 
-<ul>
-    <li><?= $this->Html->link(__d('wet_kit', "Wet UI Customisation"), ["controller"=>"pages", "action"=>"wetkit_ui"]) ?></li>
-    <li><?= $this->Html->link(__d('wet_kit', "Wet Splash Page"), ["controller"=>"pages", "action"=>"wetkit_splash"]) ?></li>
-    <li><?= $this->Html->link(__d('wet_kit', "Wet Helper"), ["controller"=>"pages", "action"=>"wet_helper"]) ?></li>
-    <li><?= $this->Html->link(__d('wet_kit', "List Helper"), ["controller"=>"pages", "action"=>"list_helper"]) ?></li>
-    <li><?= $this->Html->link(__d('wet_kit', "WetKit Component"), ["controller"=>"pages", "action"=>"wetkit_component"]) ?></li>
-    <li><?= $this->Html->link(__d('wet_kit', "EAccess Plugin"), ["controller"=>"pages", "action"=>"eaccess_plugin"]) ?></li>
-</ul>
+- <?= $this->Html->link(__d('wet_kit', "Wet UI Customisation"), ["controller"=>"pages", "action"=>"wetkit_ui"]) ?>
 
-<?php
+- <?= $this->Html->link(__d('wet_kit', "Wet Splash Page"), ["controller"=>"pages", "action"=>"wetkit_splash"]) ?>
+
+- <?= $this->Html->link(__d('wet_kit', "Wet Helper"), ["controller"=>"pages", "action"=>"wet_helper"]) ?>
+
+- <?= $this->Html->link(__d('wet_kit', "List Helper"), ["controller"=>"pages", "action"=>"list_helper"]) ?>
+
+- <?= $this->Html->link(__d('wet_kit', "WetKit Component"), ["controller"=>"pages", "action"=>"wetkit_component"]) ?>
+
+- <?= $this->Html->link(__d('wet_kit', "EAccess Plugin"), ["controller"=>"pages", "action"=>"eaccess_plugin"]) ?>
+
+- <?= $this->Html->link(__d('wet_kit', "Markdown Helper"), ["controller"=>"pages", "action"=>"wetkit_markdown_helper"]) ?>
+
+- <?= $this->Html->link(__d('wet_kit', "Error Pages Setup"), ["controller"=>"pages", "action"=>"wetkit_error_pages"]) ?>
 
 
-$markdown = $this->helpers()->load('WetKit.Markdown');
-echo $markdown->text(
-<<<'MD'
 ## How to use the WetKit plugin
 
 The Wetkit adds a layer to integrate WET into the CakePHP and streamline the implementation of applications
@@ -95,6 +99,3 @@ Important: Make sure the version is hosted in the APS environment (https://intra
 
 
 
-MD
-. "[WetKitComponent]: ".$this->Url->build(["controller"=>"pages", "action"=>"wetkit_component"])
-);

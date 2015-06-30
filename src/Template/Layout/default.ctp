@@ -42,7 +42,14 @@
     <main role="main" property="mainContentOfPage" class="container">
 <?php } ?>
                 <?= $this->Flash->render() ?>
-                <?= $this->fetch('content') ?>
+                <?php
+    if(isset($this->isMarkdown) && $this->isMarkdown === true) {
+        $markdown = $this->helpers()->load('WetKit.Markdown');
+        echo $markdown->text($this->fetch('content'));
+    } else {
+        echo $this->fetch('content');
+    }
+        ?>
                 <?= $this->Wet->modified() ?>
 <?php if ($this->fetch("wetkit-leftmenu")) { ?>
 

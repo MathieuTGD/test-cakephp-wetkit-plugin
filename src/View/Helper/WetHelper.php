@@ -65,13 +65,18 @@ class WetHelper extends Helper
             $modified = $date->i18nFormat($options['dateFormat']);
         }
 
-        return '
-        <div class="clearfix"></div>
-        <dl id="wb-dtmd">
-            <dt>' . $options['label'] . '&#32;</dt>
-            <dd><time property="dateModified">' . $modified . '</time></dd>
-        </dl>
-        ';
+        if (Configure::read('debug') && $date !== null) {
+            return '
+            <div class="clearfix"></div>
+            <dl id="wb-dtmd">
+                <dt>' . $options['label'] . '&#32;</dt>
+                <dd><time property="dateModified">' . $modified . '</time></dd>
+            </dl>
+            ';
+        } else {
+            return '';
+        }
+
     }
 
 
